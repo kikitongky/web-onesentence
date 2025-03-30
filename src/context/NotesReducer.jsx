@@ -9,6 +9,13 @@ import { v4 as uuidv4 } from "uuid";
  * @returns {Array} - The updated state after applying the action.
  */
 export const notesReducer = (state, action) => {
+  const currentDate = new Date().toLocaleString("id-ID", {
+    weekday: "long",
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  });
+
   switch (action.type) {
     /**
      * Adds a new note to the state.
@@ -19,7 +26,7 @@ export const notesReducer = (state, action) => {
         ...state,
         {
           id: uuidv4(), // Generate a unique ID for the note
-          date: Date.now(), // Store the current timestamp
+          date: currentDate, // Store the current timestamp
           text: action.payload, // The note content
         },
       ];

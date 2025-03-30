@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { CiCalendar } from "react-icons/ci";
 
 // eslint-disable-next-line react/prop-types
 export default function NotesForm({ addNote, inputRef }) {
@@ -18,9 +19,14 @@ export default function NotesForm({ addNote, inputRef }) {
     month: "long",
     year: "numeric",
   });
+
   return (
     <form onSubmit={handleSubmit} className="mx-3.5 flex flex-col gap-2">
-      <p className="text-gray-600 my-2">{currentDate}</p>
+      <p className="text-gray-600 my-2 flex flex-initial items-center gap-1">
+        <CiCalendar />
+        {currentDate}
+      </p>
+
       <textarea
         ref={inputRef}
         type="text"
