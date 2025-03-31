@@ -33,6 +33,7 @@ export const notesReducer = (state, action) => {
 
     /**
      * Deletes a note by filtering out the note with the given ID.
+     * @param {object} note - the note data
      */
     case "DELETE_NOTES":
       return state.filter((note) => note.id !== action.payload);
@@ -41,9 +42,10 @@ export const notesReducer = (state, action) => {
      * Edits an existing note by updating its text while keeping other properties unchanged.
      */
     case "EDIT_NOTES":
+      console.log("Reducer EDIT_NOTES received:", action.payload);
       return state.map((note) =>
         note.id === action.payload.id
-          ? { ...note, text: action.payload.newText } // Update text only
+          ? { ...note, text: action.payload.newText }
           : note
       );
 

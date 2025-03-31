@@ -21,8 +21,11 @@ export default function NotesForm({ addNote, inputRef }) {
   });
 
   return (
-    <form onSubmit={handleSubmit} className="mx-3.5 flex flex-col gap-2">
-      <p className="text-gray-600 my-2 flex flex-initial items-center gap-1">
+    <form
+      onSubmit={handleSubmit}
+      className="mx-3.5 my-6 flex flex-col gap-2 justify-center items-center"
+    >
+      <p className="text-gray-600 flex flex-initial items-center gap-1">
         <CiCalendar />
         {currentDate}
       </p>
@@ -32,10 +35,12 @@ export default function NotesForm({ addNote, inputRef }) {
         type="text"
         placeholder="Tulis Catatan"
         value={text}
+        id="note-form"
+        name="note-form"
         onChange={(e) => setText(e.target.value)}
         className="ring-1 mr-1.5 rounded py-1 px-1.5 w-full md:w-2xl"
       />
-      <button className="bg-gray-900 text-white py-1 px-2.5 font-bold rounded w-24">
+      <button className="bg-gray-900 text-white py-1 px-2.5 font-bold rounded w-24  transition-colors hover:bg-gray-950">
         Catat
       </button>
     </form>

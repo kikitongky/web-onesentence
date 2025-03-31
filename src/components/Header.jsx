@@ -1,7 +1,11 @@
+import { FaGithub } from "react-icons/fa";
 export default function Header() {
   return (
-    <div className="w-full bg-gray-900 py-3 px-4 text-white justify-center items-start">
-      <h1 className="text-3xl font-bold">One Sentence</h1>
+    <div className="flex justify-between items-center py-1.5 px-4.5 shadow-2xl bg-gray-900 text-white">
+      <h1>tongky</h1>
+      <a href="https://github.com/kikitongky" target="blank">
+        <FaGithub />
+      </a>
     </div>
   );
 }

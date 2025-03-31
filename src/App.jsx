@@ -56,6 +56,7 @@ export default function App() {
    * @param {string} newText - The new text replacing the old note content.
    */
   const editNote = (id, newText) => {
+    console.log("Inside editNote BEFORE dispatch:", { id, newText });
     dispatch({ type: "EDIT_NOTES", payload: { id, newText } });
   };
 
